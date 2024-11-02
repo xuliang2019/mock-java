@@ -1,7 +1,7 @@
 import models.Person;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class PersonUtilsTest {
@@ -10,10 +10,10 @@ public class PersonUtilsTest {
     PersonUtils personUtils = new PersonUtils(person);
 
     @Test
-    public void testManufactureName() {
+    public void testIsSameManufactureName() {
         String manufactureName = "Ford Motor";
         when(person.getCar().getManufacture().getName()).thenReturn(manufactureName);
-        assertEquals(manufactureName, personUtils.getManufactureName());
+        assertTrue(manufactureName, personUtils.isSameManufactureName(manufactureName));
     }
 
 }

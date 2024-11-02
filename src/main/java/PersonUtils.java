@@ -11,4 +11,8 @@ public class PersonUtils {
         return this.person.getCar().getManufacture().getName();
     }
 
+    public boolean isSameManufactureName(String manufacture) {
+        return manufacture.equals(getManufactureName());
+    }
+
 }
